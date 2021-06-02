@@ -1,17 +1,12 @@
 import React from "react";
+import {withAuthenticator, AmplifySignOut} from "@aws-amplify/ui-react";
 
-const NavBar = props => {
+const SignIn = props => {
     return(
         <>
-            <nav className="navBar">
-                <div className="navLinks">
-                    <a href="/signIn">Sign</a>
-                    <a href="/accountUpdate">Home</a>
-                    <a href="/signIn">Logout</a>
-                </div>
-            </nav>
+            <AmplifySignOut />
         </>
     )
 }
 
-export default NavBar;
+export default withAuthenticator(SignIn);

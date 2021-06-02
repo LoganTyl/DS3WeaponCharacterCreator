@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "ds3weaponcharactercrebfd90ff": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
