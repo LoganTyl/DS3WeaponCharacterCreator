@@ -8,6 +8,7 @@ import React from "react";
 // Test line for refreshing amplify
 
 
+
 const NavBar = props => {
     return(
         <>
