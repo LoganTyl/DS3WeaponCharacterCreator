@@ -5,6 +5,8 @@ import React from "react";
 //     .then(data => console.log(data))
 //     .catch(err => console.log(err))
 // }
+// Test line for refreshing amplify
+
 
 const NavBar = props => {
     return(
