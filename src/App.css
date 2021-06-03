@@ -55,6 +55,15 @@
    src: url('./fonts/soul_font.ttf') format("truetype");
 }
 
+.navLinks {
+    background-color: rgb(34, 34, 34);
+    border-bottom: 2px solid rgb(76, 76, 76);
+}
+
 .navLinks a{
     font-family: darkSoulsTitleFont;
+    color: white;
+    text-decoration: none;
+    font-size: xx-large;
+    padding: 10px;
 }
