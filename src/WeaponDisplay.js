@@ -32,6 +32,7 @@ class WeaponDisplay extends Component{
         let weaponId = params.get('id');
         fetch(`https://l3mbw2dg9b.execute-api.us-west-2.amazonaws.com/prod/weapon/${weaponId}`)
         .then(response => console.log(response))
+        .then(window.location.href="/home")
         .catch(err => {
             console.error(err)
         });
