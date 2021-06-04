@@ -26,12 +26,23 @@ class WeaponDisplay extends Component{
         })
     }
 
+    deleteWeapon(){
+        let search = window.location.search;
+        let params = new URLSearchParams(search);
+        let weaponId = params.get('id');
+        fetch(`https://l3mbw2dg9b.execute-api.us-west-2.amazonaws.com/prod/weapon/${weaponId}`)
+        .then(response => console.log(response))
+        .catch(err => {
+            console.error(err)
+        });
+    }
+
     render(){
         return(
             <>
                 <div className="weaponDisplay">
-                    <div className="basicCharacterInfo">
-                        <h3>Basic Character Info</h3>
+                    <div className="basicWeaponInfo">
+                        <h3>Basic Weapon Info</h3>
                         <p className="weaponDisplayName">Name: {this.state.weaponData.weaponName}</p>
                         <p className="weaponDisplayClass">Weapon Class: {this.state.weaponData.weaponClass}</p>
                         <span className="weaponDisplayAttackTypes">Attack Types: </span>
@@ -52,6 +63,9 @@ class WeaponDisplay extends Component{
                             <p>Spell Buff: {this.state.weaponData.attackStats.spellBuff.N}</p> */}
                         </div>
                     </div>
+                </div>
+                <div className="weaponDeleteBtn" onClick={this.deleteWeapon}>
+                    <p>Delete Weapon</p>
                 </div>
             </>
         )

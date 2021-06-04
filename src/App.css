@@ -120,9 +120,18 @@ body{
 .weaponDiv, .characterDiv{
     background-color: rgb(34, 34, 34);
     border: 2px solid rgb(76, 76, 76);
+    border-radius: 25px;
     width: 90%;
     margin: 20px auto;
     padding: 10px;
+    cursor: pointer;   
+}
+
+.weaponDeleteBtn, .characterDeleteBtn{
     cursor: pointer;
-    
+    background-color: rgb(34, 34, 34);
+    border: 2px solid rgb(76, 76, 76);
+    border-radius: 25px;
+    width: 10%;
+    text-align: center;
 }
