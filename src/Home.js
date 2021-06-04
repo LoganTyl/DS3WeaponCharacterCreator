@@ -14,7 +14,7 @@ class Home extends Component{
 
     onTabClick(e){
         let tabDiv;
-        if(e.target.tagName == "P"){
+        if(e.target.tagName === "P"){
             tabDiv = e.target.parentElement;
         }
         else{
@@ -56,36 +56,44 @@ class Home extends Component{
         });
     }
 
-    renderWeapons(){
-        // if(this.state.userWeapons.length === 0){
-        //     return <p className="emptyArrayNotice">No weapons to be found. Try creating one!</p>
-        // }
-        // return <p className="emptyArrayNotice">Weapons Exist</p>
-    }
-
-    renderCharacters(){
-        if(this.state.userCharacters.length === 0){
-            return <p className="emptyArrayNotice">No characters to be found. Try creating one!</p>
-        }
-        return <p className="emptyArrayNotice">Characters exist</p>
-    }
-
     renderCharactersOrWeapons(){
         if(this.state.isShowingWeapons){
-            // {this.renderWeapons()}
             if(this.state.userWeapons.length === 0){
                 return <p className="emptyArrayNotice">No weapons to be found. Try creating one!</p>
             }
-            return <p className="emptyArrayNotice">Weapons Exist</p>
+            return(
+                <>
+                    {this.state.userWeapons
+                    .map(weapon => (
+                        <>
+                            <div className="weaponDiv" onClick={()=>window.location.href=`/weaponDisplay?id=${weapon.weaponId}`}>
+                                <p className="weaponName">{weapon.weaponName}</p>
+                                <p className="weaponClass">{weapon.weaponClass}</p>
+                            </div>
+                        </>
+                    ))}
+                </>
+            )
         }
         else{
-            // {this.renderCharacters()}
             if(this.state.userCharacters.length === 0){
                 return <p className="emptyArrayNotice">No characters to be found. Try creating one!</p>
             }
-            return <p className="emptyArrayNotice">Characters exist</p>
+            return(
+                <>
+                    {this.state.userCharacters
+                    .map(character => (
+                        <>
+                            <div className="characterDiv" onClick={()=>window.location.href=`/characterDisplay?id=${character.characterId}`}>
+                                <p className="characterName">{character.name}</p>
+                                <p className="characterCovenant">{character.covenant}</p>
+                                <p className="characterClass">{character.startingClass}</p>
+                            </div>
+                        </>
+                    ))}
+                </>
+            )
         }
-        return;
     }
 
     render(){

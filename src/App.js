@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 import {Hub} from 'aws-amplify';
-import {AmplifySignOut} from "@aws-amplify/ui-react";
+// import {AmplifySignOut} from "@aws-amplify/ui-react";
 import { Auth } from 'aws-amplify';
 import NavBar from "./navBarComponent";
 import Home from "./Home";
@@ -29,7 +29,7 @@ class App extends Component{
     }
 
     state = {
-        isSignedIn: true,
+        isSignedIn: false,
         payloadData: null
     }
 
@@ -76,20 +76,10 @@ class App extends Component{
                         {this.renderNavBar()}
                         <div className="appContent">
                             <Switch>
-                                {/* <Redirect exact from="/" to="/signIn" /> */}
                                 <Redirect exact from="/" to="/home" />
                                 <Route exact path="/home">
                                     <Home payload={this.state.payloadData} />
                                 </Route>
-                                {/* <Route exact path="/accountUpdate">
-                                    <AccountUpdate />
-                                </Route> */}
-                                {/* <Route exact path="/signIn">
-                                    <SignIn />
-                                </Route>
-                                <Route exact path="/signUp">
-                                    <SignUp />
-                                </Route> */}
                                 <Route exact path="/weaponDisplay">
                                     <WeaponDisplay />
                                 </Route>
