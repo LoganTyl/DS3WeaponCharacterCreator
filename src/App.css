@@ -55,15 +55,64 @@
    src: url('./fonts/soul_font.ttf') format("truetype");
 }
 
+html, body{
+    min-height: 100%;
+}
+
+body{
+    background-color: rgb(22, 22, 22);
+    color: white;
+    font-family: darkSoulsMenuFont;
+}
+
 .navLinks {
     background-color: rgb(34, 34, 34);
     border-bottom: 2px solid rgb(76, 76, 76);
+    padding: 10px 20px;
 }
 
 .navLinks a{
-    font-family: darkSoulsTitleFont;
-    color: white;
+    font-family: darkSoulsTitleSemiBoldFont;
     text-decoration: none;
     font-size: xx-large;
-    padding: 10px;
+    margin: 30px;
+    color: white;
+}
+
+.tabDiv{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 2px solid rgb(76, 76, 76);
+    width: 100%;
+}
+
+.tabDiv div{
+    background-color: rgb(34, 34, 34);
+    border: 2px solid rgb(76, 76, 76);
+    border-bottom: none;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    text-align: center;
+    cursor: pointer;
+    margin: 0 30px;
+    padding: 5px 10px;
+}
+
+.tabDiv .isNotActiveTab{
+    opacity: 50%;
+}
+
+.tabDiv p{
+    font-family: darkSoulsTitleFont;
+    margin: 10px;
+    font-size: x-large;
+}
+
+.contentDiv{
+    display: flex;
+    flex-flow: column;
+    background-color: rgb(34, 34, 34);
+    width: 100%;
+    height: 100%;
 }
